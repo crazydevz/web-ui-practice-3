@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500&display=swap" rel="stylesheet">
+
+    <style>
+        /* BASIC SETUP */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        html, body {
+            background-color: rgb(0, 0, 0);
+            font-family: 'Roboto', sans-serif;
+        }
+
+        .container {
+            height: 100vh;
+            background-color: rgb(150, 150, 150);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* GRID SETUP */
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(2, 200px) 80px repeat(2, 250px);
+            grid-template-rows: 80px repeat(6, 40px) repeat(3, 60px) repeat(2, 40px);
+            /* grid-gap: 10px; */
+            justify-content: center;
+            /* background-color: rgb(165, 172, 163); */
+            background-color: white;
+            width: fit-content;
+        }
+
+        .grid-container > div {
+            background-color: white;
+        }
+
+        /* FLEX FOR TEXT CONTENT */
+        .flex-prop {
+            height: 100%;
+            display: flex;
+        }
+
+        #mens-watches {
+            grid-area: 1 / 1 / 2 / 2;
+            align-items: center;
+            justify-content: flex-end;
+        }
+
+        #options-icon {
+            grid-area: 1 / 3 / 2 / 4;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+        }
+
+        #price-tag {
+            grid-area: 3 / 1 / 4 / 2;
+            align-items: flex-start;
+            justify-content: left;
+            font-weight: 500;
+        }
+
+        #product-name-1 {
+            grid-area: 4 / 1 / 5 / 3;
+            align-items: flex-start;
+            justify-content: left;
+            font-size: 32px;
+            font-weight: 500;
+        }
+
+        #about-text {
+            grid-area: 5 / 1 / 6 / 3;
+            align-items: flex-start;
+            justify-content: left;
+            font-weight: 300;
+        }
+
+        #price-tag,
+        #product-name-1,
+        #about-text {
+            padding-left: 20px;
+        }
+
+        #size-1 {
+            grid-area: 8 / 1 / 9 / 2;
+        }
+
+        #size-2 {
+            grid-area: 9 / 1 / 10 / 2;
+        }
+
+        #size-3 {
+            grid-area: 10 / 1 / 11 / 2;
+        }
+
+        #watch-gender-category {
+            grid-area: 8 / 5 / 9 / 6;
+            color: orangered;
+        }
+
+        #current-size {
+            grid-area: 8 / 3 / 11 / 4;
+        }
+
+        #size-1,
+        #size-2,
+        #size-3,
+        #watch-gender-category,
+        #current-size {
+            align-items: center;
+            justify-content: center;
+            font-weight: 400;
+        }
+
+        #watch-img {
+            grid-area: 7 / 2 / 12 / 3;
+            background-image: url("img/watch-1.jpg");
+            background-repeat: no-repeat;
+            background-position: center;
+            /* background-attachment: scroll; */
+        }
+
+        #black-watch-img {
+            grid-area: 1 / 4 / 13 / 5;
+            background-image: url("img/watch-2.jpg");
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: cover;
+        }
+
+        #white-watch-img {
+            grid-area: 1 / 5 / 7 / 6;
+            background-image: url("img/watch-3.jpg");
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: cover;
+        }
+
+        #watch-material {
+            grid-area: 9 / 5 / 10 / 6;
+            align-items: flex-start;
+            justify-content: center;
+            font-size: 24px;
+            font-weight: 500;
+        }
+
+        .rotated {
+            writing-mode: vertical-lr;
+            transform: rotate(-180deg);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="grid-container">
+            <div class="flex-prop" id="mens-watches">Men's watches</div>
+            <div class="flex-prop" id="options-icon"><i class="fas fa-bars"></i></div>
+            <div class="flex-prop" id="price-tag">$120,000</div>
+            <div class="flex-prop" id="product-name-1">Gotham Silver</div>
+            <div class="flex-prop" id="about-text">This is a cool text about this awesome product.</div>
+            <div class="flex-prop" id="size-1">5 ATM</div>
+            <div class="flex-prop" id="size-2">40 mm</div>
+            <div class="flex-prop" id="size-3">10.5 mm</div>
+            <div id="watch-img"></div>
+            <div class="flex-prop rotated" id="current-size">Chrosso series - 40 MM</div>
+            <div id="black-watch-img"></div>
+            <div id="white-watch-img"></div>
+            <div class="flex-prop" id="watch-gender-category">Men's watch</div>
+            <div class="flex-prop" id="watch-material">Silver Tan Natural</div>
+        </div>
+    </div>
+    <script src="https://kit.fontawesome.com/cb99af59bf.js" crossorigin="anonymous"></script>
+</body>
+</html>
